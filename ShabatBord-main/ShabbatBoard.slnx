@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ShabbatBoard.Api/ShabbatBoard.Api.csproj" />
+    <Project Path="src/ShabbatBoard.Application/ShabbatBoard.Application.csproj" />
+    <Project Path="src/ShabbatBoard.Domain/ShabbatBoard.Domain.csproj" />
+    <Project Path="src/ShabbatBoard.Infrastructure/ShabbatBoard.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ShabbatBoard.Tests/ShabbatBoard.Tests.csproj" />
+  </Folder>
+</Solution>
