@@ -26,6 +26,24 @@ jobs:
       - name: Build with dotnet
         run: dotnet build ShabatBord-main/ShabbatBoard.slnx --configuration Release
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install frontend dependencies
+        run: npm ci
+        working-directory: ShabatBord-main/frontend
+
+      - name: Build frontend
+        run: npm run build
+        working-directory: ShabatBord-main/frontend
+
+      - name: Copy frontend to wwwroot
+        run: |
+            mkdir -p ShabatBord-main/src/ShabbatBoard.Api/wwwroot
+            cp -r ShabatBord-main/frontend/dist/* ShabatBord-main/src/ShabbatBoard.Api/wwwroot/
+
       - name: dotnet publish
         run: dotnet publish ShabatBord-main/src/ShabbatBoard.Api/ShabbatBoard.Api.csproj --configuration Release --output ./publish
 
