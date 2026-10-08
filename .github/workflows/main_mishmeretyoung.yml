@@ -24,7 +24,7 @@ jobs:
           dotnet-version: '10.x'
 
       - name: Build with dotnet
-        run: dotnet build ShabatBord-main/ShabbatBoard.sln --configuration Release
+        run: dotnet build ShabatBord-main/ShabbatBoard.slnx --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ShabatBord-main/ShabbatBoard.sln --configuration Release --output ./publish
